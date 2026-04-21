@@ -17,13 +17,15 @@ export default function HeroSection() {
       id="inicio"
       className="min-h-screen relative overflow-hidden bg-black"
     >
-      {/* Background radial gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(139,34,82,0.05)_0%,_transparent_70%)]" />
+      {/* Background radial gradients — multiple color sources */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(139,34,82,0.08)_0%,_transparent_60%)]" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle,_rgba(201,169,110,0.06)_0%,_transparent_60%)]" />
+      <div className="absolute bottom-0 left-[20%] w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(139,34,82,0.05)_0%,_transparent_70%)]" />
 
       {/* Main grid layout */}
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-5 min-h-screen">
         {/* Left content — 60% */}
-        <div className="col-span-1 lg:col-span-3 flex flex-col justify-center items-start text-left px-6 sm:px-8 lg:px-12 xl:px-20 py-32 lg:py-0">
+        <div className="col-span-1 lg:col-span-3 flex flex-col justify-center items-start text-left px-6 sm:px-8 lg:px-12 xl:px-20 pt-40 pb-32 lg:pt-0 lg:pb-0">
           {/* Title lines */}
           <div className="mb-8">
             <motion.div
@@ -98,7 +100,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.4 }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-wine-red/[0.08] rounded-full blur-[150px]"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-wine-red/[0.12] rounded-full blur-[150px]"
           />
 
           {/* Large outlined circle */}
@@ -142,6 +144,14 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="absolute top-[60%] left-[15%] w-20 h-px bg-gold/15 -rotate-12"
+          />
+
+          {/* Gold ambient glow */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.6 }}
+            className="absolute top-[30%] right-[10%] w-[250px] h-[250px] bg-gold/[0.04] rounded-full blur-[100px]"
           />
         </div>
       </div>

@@ -25,6 +25,11 @@ export default function ProcessSection() {
 
   return (
     <SectionWrapper id="proceso">
+      {/* Ambient color glows */}
+      <div className="absolute top-0 left-[20%] w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(201,169,110,0.05)_0%,_transparent_60%)] pointer-events-none" />
+      <div className="absolute bottom-[20%] right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(139,34,82,0.06)_0%,_transparent_60%)] pointer-events-none" />
+
+      <div className="relative z-10">
       <div className="mb-6">
         <SectionLabel number="04" label="PROCESO" />
       </div>
@@ -84,6 +89,7 @@ export default function ProcessSection() {
             </motion.div>
           );
         })}
+      </div>
       </div>
     </SectionWrapper>
   );

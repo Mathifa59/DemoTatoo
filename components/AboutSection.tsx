@@ -29,6 +29,11 @@ export default function AboutSection() {
 
   return (
     <SectionWrapper id="nosotros">
+      {/* Ambient color glows */}
+      <div className="absolute top-[10%] right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(139,34,82,0.06)_0%,_transparent_60%)] pointer-events-none" />
+      <div className="absolute bottom-[10%] left-[10%] w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(201,169,110,0.04)_0%,_transparent_60%)] pointer-events-none" />
+
+      <div className="relative z-10">
       <div className="mb-6">
         <SectionLabel number="03" label="EL ARTISTA" />
       </div>
@@ -79,6 +84,7 @@ export default function AboutSection() {
             </span>
           </div>
         </motion.div>
+      </div>
       </div>
     </SectionWrapper>
   );

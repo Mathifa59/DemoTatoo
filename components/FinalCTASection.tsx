@@ -17,9 +17,10 @@ export default function FinalCTASection() {
   return (
     <SectionWrapper id="cta-final" fullWidth={true}>
       <div className="relative overflow-hidden">
-        {/* Dramatic gradient mesh background */}
-        <div className="absolute w-[600px] h-[600px] bg-wine-red/[0.08] rounded-full blur-[150px] top-1/2 left-1/3 -translate-y-1/2 pointer-events-none" />
-        <div className="absolute w-[400px] h-[400px] bg-gold/5 rounded-full blur-[120px] top-1/3 right-1/4 pointer-events-none" />
+        {/* Dramatic gradient mesh background — intensified */}
+        <div className="absolute w-[700px] h-[700px] bg-wine-red/[0.12] rounded-full blur-[180px] top-1/2 left-1/3 -translate-y-1/2 pointer-events-none" />
+        <div className="absolute w-[500px] h-[500px] bg-gold/[0.08] rounded-full blur-[140px] top-1/3 right-1/4 pointer-events-none" />
+        <div className="absolute w-[400px] h-[400px] bg-wine-red/[0.06] rounded-full blur-[120px] bottom-0 right-[10%] pointer-events-none" />
 
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

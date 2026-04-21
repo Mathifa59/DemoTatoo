@@ -34,6 +34,11 @@ export default function PortfolioSection() {
 
   return (
     <SectionWrapper id="portfolio">
+      {/* Ambient color glows */}
+      <div className="absolute top-[20%] left-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(139,34,82,0.07)_0%,_transparent_60%)] pointer-events-none" />
+      <div className="absolute bottom-0 right-[10%] w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(201,169,110,0.04)_0%,_transparent_60%)] pointer-events-none" />
+
+      <div className="relative z-10">
       <div className="mb-6">
         <SectionLabel number="02" label="PORTAFOLIO" />
       </div>
@@ -117,8 +122,8 @@ export default function PortfolioSection() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Gradient fade on right edge */}
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
+      </div>
       </div>
     </SectionWrapper>
   );

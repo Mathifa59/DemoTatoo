@@ -26,6 +26,11 @@ const iconMap: Record<string, LucideIcon> = {
 export default function ValueSection() {
   return (
     <SectionWrapper id="beneficios">
+      {/* Ambient color glow */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(201,169,110,0.05)_0%,_transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(139,34,82,0.06)_0%,_transparent_70%)] pointer-events-none" />
+
+      <div className="relative z-10">
       <div className="mb-6">
         <SectionLabel number="01" label="BENEFICIOS" />
       </div>
@@ -57,6 +62,7 @@ export default function ValueSection() {
             </AnimatedCard>
           );
         })}
+      </div>
       </div>
     </SectionWrapper>
   );

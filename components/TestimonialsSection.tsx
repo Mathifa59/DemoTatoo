@@ -9,6 +9,11 @@ import { testimonials } from "@/data/testimonials";
 export default function TestimonialsSection() {
   return (
     <SectionWrapper id="testimonios">
+      {/* Ambient color glows */}
+      <div className="absolute top-[10%] left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(139,34,82,0.07)_0%,_transparent_60%)] pointer-events-none" />
+      <div className="absolute bottom-0 right-[5%] w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(201,169,110,0.05)_0%,_transparent_60%)] pointer-events-none" />
+
+      <div className="relative z-10">
       <SectionLabel number="06" label="TESTIMONIOS" />
       <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-12 md:mb-16 mt-6">
         Lo que dicen nuestros clientes
@@ -33,6 +38,7 @@ export default function TestimonialsSection() {
             <StarRating rating={testimonial.rating} />
           </AnimatedCard>
         ))}
+      </div>
       </div>
     </SectionWrapper>
   );

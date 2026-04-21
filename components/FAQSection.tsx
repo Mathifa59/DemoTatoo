@@ -16,6 +16,11 @@ export default function FAQSection() {
 
   return (
     <SectionWrapper id="faq">
+      {/* Ambient color glow */}
+      <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(201,169,110,0.04)_0%,_transparent_60%)] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(139,34,82,0.05)_0%,_transparent_60%)] pointer-events-none" />
+
+      <div className="relative z-10">
       <SectionLabel number="07" label="FAQ" />
       <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-12 mt-6">
         Preguntas frecuentes
@@ -59,6 +64,7 @@ export default function FAQSection() {
             </div>
           );
         })}
+      </div>
       </div>
     </SectionWrapper>
   );
