@@ -30,6 +30,8 @@ export default function HeroSection() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink-void via-ink-void/85 to-ink-void/60" />
         <div className="absolute inset-0 bg-gradient-to-b from-ink-void/70 via-transparent to-ink-void" />
+        {/* Bottom fade — smooth blend into next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-ink-void to-transparent" />
       </div>
 
       {/* Blood-red ambient mist */}
@@ -50,11 +52,11 @@ export default function HeroSection() {
         <EnsoCircle size={360} color="#a61b29" />
       </div>
 
-      {/* Seigaiha waves at the bottom */}
+      {/* Seigaiha waves — mid-section, not at the very edge */}
       <SeigaihaWaves
-        className="absolute bottom-0 left-0 w-full h-32 pointer-events-none"
+        className="absolute bottom-20 left-0 w-full h-24 pointer-events-none"
         color="#b8860b"
-        opacity={0.18}
+        opacity={0.10}
       />
 
       {/* Main content */}

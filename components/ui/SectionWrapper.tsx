@@ -21,8 +21,8 @@ export default function SectionWrapper({
   const prefersReducedMotion = useReducedMotion();
 
   const containerClasses = fullWidth
-    ? `relative overflow-hidden px-6 sm:px-8 lg:px-12 py-20 md:py-28 ${className}`
-    : `relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28 ${className}`;
+    ? `relative overflow-hidden px-6 sm:px-8 lg:px-12 py-12 md:py-16 ${className}`
+    : `relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 md:py-16 ${className}`;
 
   if (!animate || prefersReducedMotion) {
     return (

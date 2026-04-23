@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-ink-void border-t border-vermilion/20 relative overflow-hidden">
+    <footer className="bg-ink-void border-t border-vermilion/10 relative overflow-hidden">
       {/* Seigaiha top decoration */}
       <SeigaihaWaves
         className="absolute top-0 left-0 w-full h-16 pointer-events-none"

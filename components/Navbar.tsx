@@ -52,7 +52,7 @@ export default function Navbar() {
               Yume
             </span>
             <span className="text-[9px] tracking-[0.4em] uppercase text-kin/70 mt-0.5">
-              Tattoo · Miraflores
+              Tattoo Studio
             </span>
           </span>
         </button>
@@ -63,7 +63,7 @@ export default function Navbar() {
             <li key={link.href}>
               <button
                 onClick={() => handleLinkClick(link.href)}
-                className="relative text-[10px] tracking-[0.3em] uppercase text-washi/60 hover:text-washi transition-colors duration-300 group py-1"
+                className="relative text-[10px] tracking-[0.3em] uppercase text-washi/85 hover:text-white transition-colors duration-300 group py-1"
               >
                 {link.label}
                 <span className="absolute left-0 -bottom-1 w-0 h-px bg-vermilion group-hover:w-full transition-all duration-300" />
