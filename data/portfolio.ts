@@ -21,7 +21,7 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Oriental",
     kanji: "波",
     image:
-      "https://images.unsplash.com/photo-1526481280698-8fcc13fd2e7e?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1590246815107-4c79a84afb45?w=900&q=80&auto=format&fit=crop",
     gradient:
       "linear-gradient(145deg, #0b0b10 0%, #121a2a 60%, #1a1f3a 100%)",
   },
