@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Shippori_Mincho, Noto_Serif_JP, Inter } from "next/font/google";
 import "./globals.css";
 
-const playfairDisplay = Playfair_Display({
+const shippori = Shippori_Mincho({
   subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
   variable: "--font-heading",
+  display: "swap",
+});
+
+const notoSerifJP = Noto_Serif_JP({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  variable: "--font-jp",
   display: "swap",
 });
 
@@ -15,9 +23,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "YumeTattoo | Estudio de Tatuajes Premium",
+  title: "夢 YumeTattoo | Estudio de Tatuaje Oriental",
   description:
-    "Transformamos ideas en piezas que llevas para siempre. Diseño personalizado, atención profesional y una experiencia pensada desde el primer contacto.",
+    "Irezumi contemporáneo. Piezas únicas que honran la tradición japonesa del tatuaje, ejecutadas con precisión y carácter.",
 };
 
 export default function RootLayout({
@@ -26,10 +34,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${playfairDisplay.variable} ${inter.variable}`}>
-      <body className="bg-bg-primary text-text-primary font-body">
-        {children}
-      </body>
+    <html
+      lang="es"
+      className={`${shippori.variable} ${notoSerifJP.variable} ${inter.variable}`}
+    >
+      <body className="bg-ink-void text-washi font-body">{children}</body>
     </html>
   );
 }

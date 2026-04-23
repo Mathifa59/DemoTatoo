@@ -4,12 +4,20 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import SectionLabel from "@/components/ui/SectionLabel";
+import KanjiBackdrop from "@/components/ui/KanjiBackdrop";
 import { portfolioItems } from "@/data/portfolio";
 
-const categories = ["Todos", "Realismo", "Blackwork", "Lettering", "Minimalista"];
+const categories = [
+  "Todos",
+  "Irezumi",
+  "Blackwork",
+  "Sumi-e",
+  "Neo-tradicional",
+  "Minimalista",
+] as const;
 
 export default function PortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState("Todos");
+  const [activeCategory, setActiveCategory] = useState<string>("Todos");
   const carouselRef = useRef<HTMLDivElement>(null);
   const [dragConstraintRight, setDragConstraintRight] = useState(0);
   const prefersReducedMotion = useReducedMotion();
@@ -34,96 +42,136 @@ export default function PortfolioSection() {
 
   return (
     <SectionWrapper id="portfolio">
-      {/* Ambient color glows */}
-      <div className="absolute top-[20%] left-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(139,34,82,0.07)_0%,_transparent_60%)] pointer-events-none" />
-      <div className="absolute bottom-0 right-[10%] w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(201,169,110,0.04)_0%,_transparent_60%)] pointer-events-none" />
+      <KanjiBackdrop
+        char="作"
+        className="absolute -left-16 top-10 text-[26rem]"
+        opacity={0.04}
+      />
+
+      <div className="absolute top-[20%] right-0 w-[600px] h-[600px] bg-blood/10 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="relative z-10">
-      <div className="mb-6">
-        <SectionLabel number="02" label="PORTAFOLIO" />
-      </div>
+        <div className="mb-8">
+          <SectionLabel number="02" label="Portafolio" kanji="作" />
+        </div>
 
-      <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-2">
-        Portafolio
-      </h2>
-      <p className="text-text-secondary text-lg mb-8">
-        Cada pieza cuenta una historia
-      </p>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div>
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-washi mb-3 leading-tight">
+              Obras <span className="italic text-vermilion-light">recientes</span>
+            </h2>
+            <p className="text-washi/60 text-base md:text-lg">
+              Cada trazo nace de una conversación. Cada pieza, única.
+            </p>
+          </div>
+          <span className="font-jp text-washi/40 text-sm tracking-[0.3em] hidden md:block">
+            最近の作品 · 2024 — 2026
+          </span>
+        </div>
 
-      {/* Category filter buttons */}
-      <div className="flex gap-6 mb-10">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className={`text-xs tracking-[0.2em] uppercase transition-all duration-200 pb-1 border-b ${
-              activeCategory === cat
-                ? "text-gold border-gold"
-                : "text-text-muted hover:text-text-secondary border-transparent"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+        {/* Category filter — vertical pipes + kanji-ish feel */}
+        <div className="flex flex-wrap gap-x-8 gap-y-3 mb-12 border-t border-b border-kin/15 py-5">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`relative text-[11px] tracking-[0.25em] uppercase transition-all duration-300 py-1 ${
+                activeCategory === cat
+                  ? "text-vermilion-light"
+                  : "text-washi/40 hover:text-washi"
+              }`}
+            >
+              {activeCategory === cat && (
+                <span className="absolute -left-3 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-vermilion" />
+              )}
+              {cat}
+            </button>
+          ))}
+        </div>
 
-      {/* Horizontal scroll carousel */}
-      <div className="relative">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCategory}
-            initial={prefersReducedMotion ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
+        {/* Carousel */}
+        <div className="relative">
+          <AnimatePresence mode="wait">
             <motion.div
-              ref={carouselRef}
-              className="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing"
-              style={{ scrollSnapType: "x mandatory" }}
+              key={activeCategory}
+              initial={prefersReducedMotion ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="flex gap-6 md:gap-8 pb-4"
-                drag={prefersReducedMotion ? false : "x"}
-                dragConstraints={{ left: dragConstraintRight, right: 0 }}
-                dragElastic={0.1}
+                ref={carouselRef}
+                className="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing"
+                style={{ scrollSnapType: "x mandatory" }}
               >
-                {filtered.map((item) => (
-                  <motion.div
-                    key={item.id}
-                    className="min-w-[280px] md:min-w-[380px] lg:min-w-[420px] aspect-[3/4] rounded-2xl overflow-hidden relative group cursor-grab active:cursor-grabbing flex-shrink-0 group-hover:ring-1 group-hover:ring-gold/30"
-                    style={{ scrollSnapAlign: "start" }}
-                  >
-                    {/* Gradient background */}
-                    <div
-                      className="absolute inset-0 group-hover:scale-105 transition-transform duration-700"
-                      style={{ background: item.gradient }}
-                    />
+                <motion.div
+                  className="flex gap-6 md:gap-8 pb-4"
+                  drag={prefersReducedMotion ? false : "x"}
+                  dragConstraints={{ left: dragConstraintRight, right: 0 }}
+                  dragElastic={0.08}
+                >
+                  {filtered.map((item, idx) => (
+                    <motion.div
+                      key={item.id}
+                      whileHover={{ y: -8 }}
+                      transition={{ duration: 0.4 }}
+                      className="group min-w-[280px] md:min-w-[360px] lg:min-w-[400px] aspect-[3/4] overflow-hidden relative cursor-grab active:cursor-grabbing flex-shrink-0 border border-kin/20"
+                      style={{
+                        scrollSnapAlign: "start",
+                        background: item.gradient,
+                      }}
+                    >
+                      {item.image && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="absolute inset-0 w-full h-full object-cover grayscale-[15%] contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        />
+                      )}
 
-                    {/* Bottom gradient overlay — always visible */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                      {/* Dark overlays */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink-void via-ink-void/30 to-transparent" />
+                      <div className="absolute inset-0 bg-ink-void/20 group-hover:bg-ink-void/5 transition-colors duration-500" />
 
-                    {/* Hover gold ring */}
-                    <div className="absolute inset-0 rounded-2xl ring-0 group-hover:ring-1 ring-gold/30 transition-all duration-300 pointer-events-none" />
+                      {/* Hanko-style number */}
+                      <div className="absolute top-4 left-4 w-11 h-11 flex items-center justify-center bg-vermilion text-washi text-[10px] tracking-[0.2em] font-body rotate-[-4deg]">
+                        0{idx + 1}
+                      </div>
 
-                    {/* Title and category at bottom-left */}
-                    <div className="absolute bottom-0 left-0 p-6">
-                      <span className="text-xs tracking-[0.2em] uppercase text-gold/80 block mb-1">
-                        {item.category}
-                      </span>
-                      <h3 className="font-heading text-lg text-white">
-                        {item.title}
-                      </h3>
-                    </div>
-                  </motion.div>
-                ))}
+                      {/* Kanji accent */}
+                      {item.kanji && (
+                        <span className="absolute top-3 right-4 font-jp font-black text-6xl text-vermilion-light/80 leading-none select-none">
+                          {item.kanji}
+                        </span>
+                      )}
+
+                      {/* Corner brackets (kin) */}
+                      <span className="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-kin/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <span className="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-kin/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                      {/* Footer info */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <span className="text-[10px] tracking-[0.3em] uppercase text-kin block mb-2">
+                          {item.category}
+                        </span>
+                        <h3 className="font-heading text-lg text-washi leading-snug">
+                          {item.title}
+                        </h3>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
               </motion.div>
             </motion.div>
-          </motion.div>
-        </AnimatePresence>
+          </AnimatePresence>
 
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
-      </div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-ink-void to-transparent pointer-events-none z-10" />
+        </div>
+
+        <p className="text-[10px] tracking-[0.3em] uppercase text-washi/40 mt-8 text-center">
+          ← Arrastra para explorar · {filtered.length} piezas →
+        </p>
       </div>
     </SectionWrapper>
   );

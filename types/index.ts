@@ -16,13 +16,16 @@ export interface PortfolioItem {
   id: string;
   title: string;
   category: PortfolioCategory;
-  gradient: string; // CSS gradient string for placeholder image
+  gradient: string; // CSS gradient used as fallback / overlay
+  image?: string; // Optional image URL
+  kanji?: string; // Small kanji accent
 }
 
 export type PortfolioCategory =
-  | "Realismo"
+  | "Irezumi"
   | "Blackwork"
-  | "Lettering"
+  | "Sumi-e"
+  | "Neo-tradicional"
   | "Minimalista";
 
 /** Process step */
