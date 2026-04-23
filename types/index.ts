@@ -22,9 +22,9 @@ export interface PortfolioItem {
 }
 
 export type PortfolioCategory =
-  | "Irezumi"
+  | "Oriental"
   | "Blackwork"
-  | "Sumi-e"
+  | "Tinta oriental"
   | "Neo-tradicional"
   | "Minimalista";
 

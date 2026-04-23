@@ -23,9 +23,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "夢 YumeTattoo | Estudio de Tatuaje Oriental",
+  title: "YumeTattoo | Estudio de Tatuaje · Miraflores, Lima",
   description:
-    "Irezumi contemporáneo. Piezas únicas que honran la tradición japonesa del tatuaje, ejecutadas con precisión y carácter.",
+    "Tatuaje oriental en Miraflores, Lima. Piezas únicas que honran la tradición japonesa del tatuaje, ejecutadas con precisión y carácter.",
 };
 
 export default function RootLayout({

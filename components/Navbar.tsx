@@ -52,7 +52,7 @@ export default function Navbar() {
               Yume
             </span>
             <span className="text-[9px] tracking-[0.4em] uppercase text-kin/70 mt-0.5">
-              Tattoo · 刺青
+              Tattoo · Miraflores
             </span>
           </span>
         </button>

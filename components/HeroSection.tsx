@@ -78,7 +78,7 @@ export default function HeroSection() {
             <span className="font-jp text-vermilion text-lg">刺青</span>
             <span className="w-16 h-px bg-vermilion/60" />
             <span className="text-[10px] tracking-[0.4em] uppercase text-kin">
-              Estudio · Ciudad de México
+              Estudio · Miraflores, Lima
             </span>
           </motion.div>
 
@@ -136,7 +136,7 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.45 }}
             className="text-base md:text-lg text-washi/70 max-w-xl mb-12 leading-relaxed"
           >
-            Irezumi contemporáneo, blackwork y sumi-e. Cada pieza se diseña
+            Tatuaje oriental, blackwork y realismo. Cada pieza se diseña
             a mano, desde la conversación al trazo final — honrando la
             tradición y tu propia mitología.
           </motion.p>
@@ -178,7 +178,7 @@ export default function HeroSection() {
             <span className="w-6 h-px bg-kin/30" />
             <span>+800 piezas</span>
             <span className="w-6 h-px bg-kin/30" />
-            <span>Tokio · CDMX</span>
+            <span>Tokio · Lima</span>
           </motion.div>
         </div>
 

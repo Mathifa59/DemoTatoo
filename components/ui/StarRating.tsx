@@ -14,8 +14,8 @@ export default function StarRating({ rating, size = 16 }: StarRatingProps) {
           size={size}
           className={
             i < rating
-              ? "fill-gold text-gold"
-              : "fill-transparent text-text-muted"
+              ? "fill-vermilion text-vermilion"
+              : "fill-transparent text-washi/20"
           }
         />
       ))}

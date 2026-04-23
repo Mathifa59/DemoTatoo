@@ -8,7 +8,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: "p1",
     title: "Dragón ascendente · manga completa",
-    category: "Irezumi",
+    category: "Oriental",
     kanji: "龍",
     image:
       "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=900&q=80&auto=format&fit=crop",
@@ -18,17 +18,17 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: "p2",
     title: "Ola de Kanagawa · omóplato",
-    category: "Irezumi",
+    category: "Oriental",
     kanji: "波",
     image:
-      "https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1526481280698-8fcc13fd2e7e?w=900&q=80&auto=format&fit=crop",
     gradient:
       "linear-gradient(145deg, #0b0b10 0%, #121a2a 60%, #1a1f3a 100%)",
   },
   {
     id: "p3",
     title: "Hannya en muslo · tinta roja",
-    category: "Irezumi",
+    category: "Oriental",
     kanji: "般",
     image:
       "https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=900&q=80&auto=format&fit=crop",
@@ -41,24 +41,24 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Blackwork",
     kanji: "麻",
     image:
-      "https://images.unsplash.com/photo-1542727313-4f7ea37f2f33?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80&auto=format&fit=crop",
     gradient:
       "linear-gradient(145deg, #05050a 0%, #16161d 50%, #1f1f28 100%)",
   },
   {
     id: "p5",
     title: "Tigre sumi-e · costillas",
-    category: "Sumi-e",
+    category: "Tinta oriental",
     kanji: "虎",
     image:
-      "https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1590246815107-4c79a84afb45?w=900&q=80&auto=format&fit=crop",
     gradient:
       "linear-gradient(160deg, #0b0b10 0%, #121218 50%, #0b0b10 100%)",
   },
   {
     id: "p6",
     title: "Grullas en vuelo · espalda",
-    category: "Sumi-e",
+    category: "Tinta oriental",
     kanji: "鶴",
     image:
       "https://images.unsplash.com/photo-1552627019-947c3789ffb5?w=900&q=80&auto=format&fit=crop",
@@ -71,7 +71,7 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Minimalista",
     kanji: "桜",
     image:
-      "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1604881991720-f91add269bed?w=900&q=80&auto=format&fit=crop",
     gradient:
       "linear-gradient(180deg, #0b0b10 0%, #1a0a12 50%, #2a0a14 100%)",
   },
